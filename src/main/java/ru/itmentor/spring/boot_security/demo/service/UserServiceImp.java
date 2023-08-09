@@ -37,14 +37,17 @@ public class UserServiceImp implements UserService, UserDetailsService {
         return userRepository.findById(uid);
     }
     @Override
+    @Transactional
     public void saveUser(User user){
         userRepository.save(user);
     }
     @Override
+    @Transactional
     public void delete(Long uid){
         userRepository.deleteById(uid);
     }
     @Override
+    @Transactional
     public void edit(Long uid, User user){
         userRepository.save(user);
     }
