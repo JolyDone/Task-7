@@ -18,8 +18,8 @@ import java.util.Optional;
 
 @Service("userServiceImp")
 public class UserServiceImp implements UserService, UserDetailsService {
-    private final UserRepository userRepository;
-    private final RoleRepository roleRepository;
+    private UserRepository userRepository;
+    private RoleRepository roleRepository;
 
     @Autowired
     public UserServiceImp(UserRepository userRepository, RoleRepository roleRepository) {

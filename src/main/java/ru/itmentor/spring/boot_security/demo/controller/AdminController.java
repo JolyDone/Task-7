@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 @RequestMapping("/admin")
 public class AdminController {
     private UserServiceImp userServiceImp;
-    private final PasswordEncoder passwordEncoder;
+    private PasswordEncoder passwordEncoder;
     @Autowired
     public AdminController(UserServiceImp userServiceImp, PasswordEncoder passwordEncoder) {
         this.userServiceImp = userServiceImp;
