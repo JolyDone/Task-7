@@ -31,6 +31,7 @@
         <option th:each="role : ${allRoles}" th:value="${role.role}" th:text="${role.role}"></option>
     </select><br>
 
+    <div th:if="${emailError}" style="color: red;">User exist</div><br>
     <button type="submit">Save User</button>
 </form>
 </body>

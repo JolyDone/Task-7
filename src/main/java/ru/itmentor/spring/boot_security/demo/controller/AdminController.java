@@ -52,6 +52,12 @@ public class AdminController {
             model.addAttribute("allRoles", userServiceImp.findAllRoles());
             return "/new";
         }
+        if (userServiceImp.findUserByEmail(user.getEmail()).isPresent()){
+            model.addAttribute("allRoles", userServiceImp.findAllRoles());
+            model.addAttribute("emailError", "User exists");
+            return "/new";
+        }
+
 
         user.setRoles(rolesSet);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
